@@ -20,7 +20,7 @@ A Python-based reconnaissance tool for DNS analysis, subdomain enumeration, URL 
 Clone the repository:
 
 ```bash
-git clone <REPOSITORY_URL>
+git clone https://github.com/peresvet-1/DomainRecon
 cd DomainRecon
 ```
 
