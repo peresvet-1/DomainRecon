@@ -17,35 +17,83 @@ A Python-based reconnaissance tool for DNS analysis, subdomain enumeration, URL 
 
 ## Installation
 
-Clone the repository:
+### Requirements
+
+- Python 3.10 or newer
+- Git
+- Internet connection
+
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/peresvet-1/DomainRecon
+git clone https://github.com/peresvet-1/DomainRecon.git
 cd DomainRecon
 ```
 
-Create and activate a virtual environment.
+### 2. Create a virtual environment
 
-**Windows PowerShell:**
+**Windows (Command Prompt):**
+
+```bat
+py -m venv .venv
+```
+
+**Windows (PowerShell):**
 
 ```powershell
-python -m venv .venv
+py -m venv .venv
+```
+
+**Linux / Kali Linux:**
+
+```bash
+python3 -m venv .venv
+```
+
+If Linux reports that the `venv` module is unavailable, install the appropriate Python venv package for your distribution, then retry.
+
+### 3. Activate the virtual environment
+
+**Windows (Command Prompt):**
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+**Windows (PowerShell):**
+
+```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-Install dependencies:
+**Linux / Kali Linux:**
 
-```powershell
+```bash
+source .venv/bin/activate
+```
+
+### 4. Install dependencies
+
+After activating the virtual environment, run:
+
+```bash
 python -m pip install -r requirements.txt
+```
+
+### 5. Run DomainRecon
+
+```bash
+python main.py
 ```
 
 ## Usage
 
-Run the tool:
+Choose an option from the interactive menu.
 
-```powershell
-python main.py
-```
+- **DNS Scan** — retrieves A, AAAA, MX, NS, and TXT records.
+- **URL Check** — displays the HTTP response status code and final URL after redirects.
+- **Subdomain Enumeration** — checks candidate subdomains from `wordlists/subdomains.txt` using A or AAAA DNS records.
+- **HTTP Security Analyzer** — inspects common HTTP security headers and
 
 Choose an option from the interactive menu and provide the requested domain or URL.
 
